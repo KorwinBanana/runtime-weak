@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <objc/runtime.h>
 
 typedef void(^voidBlock)(void);
 
 @interface KWBlockExecutor : NSObject
 
-- (id) initWithBlock:(voidBlock)block;
+- (id) initWithBlock:(voidBlock)aBlock;
 
 @end

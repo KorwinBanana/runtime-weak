@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0ABE2B5A1F6A5DEB007BAD4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE2B591F6A5DEB007BAD4F /* main.m */; };
+		0ABE2B641F6A5DF8007BAD4F /* KWBlockExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE2B611F6A5DF8007BAD4F /* KWBlockExecutor.m */; };
+		0ABE2B651F6A5DF8007BAD4F /* NSObject+KWRunAtDeallor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABE2B631F6A5DF8007BAD4F /* NSObject+KWRunAtDeallor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		0ABE2B561F6A5DEB007BAD4F /* runtimeDoWeak */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = runtimeDoWeak; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ABE2B591F6A5DEB007BAD4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0ABE2B601F6A5DF8007BAD4F /* KWBlockExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWBlockExecutor.h; sourceTree = "<group>"; };
+		0ABE2B611F6A5DF8007BAD4F /* KWBlockExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWBlockExecutor.m; sourceTree = "<group>"; };
+		0ABE2B621F6A5DF8007BAD4F /* NSObject+KWRunAtDeallor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KWRunAtDeallor.h"; sourceTree = "<group>"; };
+		0ABE2B631F6A5DF8007BAD4F /* NSObject+KWRunAtDeallor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KWRunAtDeallor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,10 @@
 		0ABE2B581F6A5DEB007BAD4F /* runtimeDoWeak */ = {
 			isa = PBXGroup;
 			children = (
+				0ABE2B601F6A5DF8007BAD4F /* KWBlockExecutor.h */,
+				0ABE2B611F6A5DF8007BAD4F /* KWBlockExecutor.m */,
+				0ABE2B621F6A5DF8007BAD4F /* NSObject+KWRunAtDeallor.h */,
+				0ABE2B631F6A5DF8007BAD4F /* NSObject+KWRunAtDeallor.m */,
 				0ABE2B591F6A5DEB007BAD4F /* main.m */,
 			);
 			path = runtimeDoWeak;
@@ -120,6 +130,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ABE2B641F6A5DF8007BAD4F /* KWBlockExecutor.m in Sources */,
+				0ABE2B651F6A5DF8007BAD4F /* NSObject+KWRunAtDeallor.m in Sources */,
 				0ABE2B5A1F6A5DEB007BAD4F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

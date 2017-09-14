@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "KWBlockExecutor.h"
 
-const void *runAtDeallocBlockKey = &runAtDeallocBlockKey;
-
 @interface NSObject (KWRunAtDeallor)
 
 -(void)KW_runAtDealloc:(voidBlock)block;

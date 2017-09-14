@@ -7,19 +7,33 @@
 //
 
 #import "NSObject+KWRunAtDeallor.h"
-#import "KWBlockExecutor.h"
+#import <objc/runtime.h>
+
+const void *runAtDeallocBlockKey = &runAtDeallocBlockKey;
 
 @implementation NSObject (KWRunAtDeallor)
 
--(void)KW_runAtDealloc:(voidBlock)block
-{
-    if (block) {
-        KWBlockExecutor *executor = [[KWBlockExecutor alloc]initWithBlock:block];
-        
-        objc_setAssociatedObject(self,
-                                 runAtDeallocBlockKey,
-                                 executor,
-                                 OBJC_ASSOCIATION_RETAIN);    }
+- (NSHashTable *)KW_deallocExecutors {
+    
+    NSHashTable *table = objc_getAssociatedObject(self,runAtDeallocBlockKey);
+    
+    if (!table) {
+        table = [NSHashTable hashTableWithOptions:NSPointerFunctionsStrongMemory];
+        objc_setAssociatedObject(self, runAtDeallocBlockKey, table, OBJC_ASSOCIATION_RETAIN);
+    }
+    
+    return table;
 }
+
+- (void)KW_runAtDealloc:(voidBlock)block {
+    if (block) {
+        KWBlockExecutor *executor = [[KWBlockExecutor alloc] initWithBlock:block];
+        
+        @synchronized (self) {
+            [[self KW_deallocExecutors] addObject:executor];
+        }
+    }
+}
+
 
 @end
